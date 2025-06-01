@@ -16,13 +16,13 @@ jobs:
       - name: Install sitemap generator
         run: npm install -g sitemap-generator-cli
 
-      - name: Generate sitemap-auto.xml
-        run: |
-          mkdir -p public
-          sitemap-generator "https://harshiksenthil.github.io/myclipblog" \
-            --filepath public/sitemap-auto.xml \
-            --strip-querystring \
-            --exclude-pattern "https://harshiksenthil.github.io/myclipblog/video.*"
+      - name: Generate sitemap-auto.xml (only crawl main pages)
+  run: |
+    mkdir -p public
+    sitemap-generator "https://harshiksenthil.github.io/myclipblog" \
+      --filepath public/sitemap-auto.xml \
+      --strip-querystring \
+      --max-depth 1
 
 
       - name: Commit generated sitemap
