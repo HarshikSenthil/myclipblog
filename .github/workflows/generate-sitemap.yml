@@ -1,0 +1,41 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install sitemap generator
+        run: npm install -g sitemap-generator-cli
+
+      - name: Generate sitemap
+        run: |
+          mkdir -p public
+          sitemap-generator https://harshiksenthil.github.io/myclipblog/ \
+            --strip-querystring \
+            --filepath ./sitemap.xml \
+            --max-depth 5 \
+            --max-entries-per-file 50000 \
+            --ignore-robots-txt
+
+      - name: Commit and push sitemap
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add sitemap.xml
+          git commit -m 'Auto-generate sitemap.xml' || echo "No changes"
+          git push
