@@ -17,13 +17,14 @@ jobs:
       - name: Install sitemap generator
         run: npm install -g sitemap-generator-cli
 
-      - name: Generate sitemap-auto.xml (skip /video/)
-        run: |
-          mkdir -p public
-          sitemap-generator https://harshiksenthil.github.io/myclipblog \
-            --strip-querystring \
-            --filepath public/sitemap-auto.xml \
-            --exclude-pattern "/video/"
+      - name: Generate sitemap-auto.xml (exclude /video/)
+    run: |
+    mkdir -p public
+    sitemap-generator https://harshiksenthil.github.io/myclipblog \
+      --strip-querystring \
+      --filepath public/sitemap-auto.xml \
+      --exclude-pattern "/video.*"
+
 
       - name: Commit sitemap
         env:
