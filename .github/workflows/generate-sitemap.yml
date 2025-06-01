@@ -1,15 +1,11 @@
 name: Generate Sitemap
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -26,20 +22,19 @@ jobs:
         run: |
           mkdir -p public
           sitemap-generator https://harshiksenthil.github.io/myclipblog/ \
-            --strip-querystring \
-            --filepath ./sitemap.xml \
-            --max-depth 5 \
-            --max-entries-per-file 50000 \
-            --ignore-robots-txt
+          --strip-querystring \
+          --filepath ./sitemap.xml \
+          --max-depth 5 \
+          --max-entries-per-file 50000 \
+          --ignore-robots-txt
 
-            - name: Commit sitemap
-  env:
-    TOKEN: ${{ secrets.GH_PAT }}
-  run: |
-    git config --global user.name "github-actions"
-    git config --global user.email "github-actions@github.com"
-    git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
-    git add sitemap.xml
-    git commit -m "Auto-generate sitemap.xml" || echo "No changes to commit"
-    git push origin HEAD:main
-
+      - name: Commit sitemap
+        env:
+          TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
+          git add sitemap.xml
+          git commit -m "Auto-generate sitemap.xml" || echo "No changes to commit"
+          git push origin HEAD:main
