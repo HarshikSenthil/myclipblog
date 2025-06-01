@@ -1,10 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://harshiksenthil.github.io/myclipblog/</loc>
   </url>
   <url>
     <loc>https://harshiksenthil.github.io/myclipblog/video/sample-post/</loc>
+  </url>
+  <url>
+    <loc>https://harshiksenthil.github.io/myclipblog/video/havent-any-of-you-ever-had-a-dream/</loc>
   </url>
 </urlset>
