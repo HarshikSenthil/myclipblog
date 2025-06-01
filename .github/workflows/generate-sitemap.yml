@@ -22,7 +22,8 @@ jobs:
           sitemap-generator "https://harshiksenthil.github.io/myclipblog" \
             --filepath public/sitemap-auto.xml \
             --strip-querystring \
-            --exclude-pattern "/video.*"
+            --exclude-pattern "https://harshiksenthil.github.io/myclipblog/video.*"
+
 
       - name: Commit generated sitemap
         env:
