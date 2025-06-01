@@ -1,4 +1,4 @@
-name: Generate Sitemap (Exclude /video)
+name: Generate Sitemap (Non-Video Only)
 
 on:
   workflow_dispatch:
@@ -10,21 +10,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Install sitemap-generator
+      - name: Install sitemap generator
         run: npm install -g sitemap-generator-cli
 
-      - name: Generate sitemap-auto.xml (exclude /video)
+      - name: Generate sitemap-auto.xml
         run: |
           mkdir -p public
           sitemap-generator "https://harshiksenthil.github.io/myclipblog" \
-            --strip-querystring \
             --filepath public/sitemap-auto.xml \
-            --exclude-pattern "/video"
+            --strip-querystring \
+            --exclude-pattern "/video.*"
 
-      - name: Commit sitemap
+      - name: Commit generated sitemap
         env:
           TOKEN: ${{ secrets.GH_PAT }}
         run: |
