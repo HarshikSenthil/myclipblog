@@ -1,7 +1,6 @@
-name: Generate Sitemap (Non-Video Only)
+name: Generate Sitemap
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
@@ -9,29 +8,26 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install sitemap generator
+      - name: Install sitemap-generator-cli
         run: npm install -g sitemap-generator-cli
 
-      - name: Generate sitemap-auto.xml (only crawl main pages)
-  run: |
-    mkdir -p public
-    sitemap-generator "https://harshiksenthil.github.io/myclipblog" \
-      --filepath public/sitemap-auto.xml \
-      --strip-querystring \
-      --max-depth 1
-
-
-      - name: Commit generated sitemap
-        env:
-          TOKEN: ${{ secrets.GH_PAT }}
+      - name: Generate sitemap-auto.xml (non-video only)
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
+          mkdir -p public
+          sitemap-generator "https://harshiksenthil.github.io/myclipblog" \
+            --filepath public/sitemap-auto.xml \
+            --strip-querystring \
+            --max-depth 1
+
+      - name: Commit and push sitemap
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
           git add public/sitemap-auto.xml
           git commit -m "Update sitemap-auto.xml" || echo "No changes"
-          git push origin HEAD:main
+          git push
