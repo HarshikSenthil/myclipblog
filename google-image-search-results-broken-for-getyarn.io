@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Image Search Broken for GetYarn.io</title>
+  <style>
+    body { font-family: Georgia, serif; line-height: 1.6; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #222; }
+    h1, h2, h3 { color: #111; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f8f8f8; }
+    a { color: #0056b3; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .highlight { background: #fffbe6; padding: 5px; }
+  </style>
+</head>
+<body>
+
+  <h1>Google Image Search Is Broken for GetYarn.io Clips</h1>
+  <h3>(Proof, Timeline & Call for Google’s Attention)</h3>
+  <p><strong>Last Updated:</strong> June 2025</p>
+
+  <h2>🚨 Summary</h2>
+  <p>
+    Since <strong>early 2024</strong>, Google Image Search results for <strong>GetYarn.io</strong> — a widely-used video clip platform — have <strong>progressively degraded</strong>.
+    Search queries that once returned relevant, previewable video thumbnails now show <strong>broken, irrelevant, or missing results</strong>.
+  </p>
+  <p>This post outlines:</p>
+  <ul>
+    <li>A detailed <strong>timeline of bugs</strong></li>
+    <li><strong>Visual evidence</strong></li>
+    <li><strong>Steps to reproduce</strong></li>
+    <li>A final request for Google's Search and Engineering teams</li>
+  </ul>
+
+  <h2>🕐 Timeline of Bugs (April 2024 → Today)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Issue</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>April 2024</strong></td>
+        <td>Out-of-Order / Jumbled Results</td>
+        <td>Yarn clips began appearing in unrelated or random queries, breaking visual navigation.</td>
+      </tr>
+      <tr>
+        <td><strong>Nov 2024</strong></td>
+        <td>Incorrect or Replaced Thumbnails</td>
+        <td>Thumbnails no longer match clips — visual mismatches are widespread.</td>
+      </tr>
+      <tr>
+        <td><strong>Jan 2025</strong></td>
+        <td>Massive Image Loss + Filter Failure</td>
+        <td>Key filters like “Clip” and “Quotes” stopped working. Most image previews vanished.</td>
+      </tr>
+      <tr>
+        <td><strong>May 2025</strong></td>
+        <td>Fully Broken Rendering</td>
+        <td>Image search returns almost <strong>no valid thumbnails</strong>. Relevance is gone.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>🖼️ Latest Evidence (May–June 2025)</h2>
+  <p>
+    Here's a search for <code>getyarn like that</code>, one of Yarn’s most consistently used phrases:
+  </p>
+  <ul>
+    <li><strong>80%+ of results are broken</strong> — irrelevant, swapped, or missing visuals.</li>
+    <li>Previously indexed video links like:<br>
+      <a href="https://getyarn.io/yarn-clip/fab0d148-bc58-433d-8bcd-9aed6536be06" target="_blank">Yarn Clip 1</a><br>
+      <a href="https://getyarn.io/yarn-clip/22560cbe-5a9a-4d0d-ab0d-6bd4e5cc6abf" target="_blank">Yarn Clip 2</a><br>
+      ...<em>no longer appear</em> under Image or Video tabs.
+    </li>
+  </ul>
+  <p>📸 Screenshots:<br>
+    - <a href="screenshot-link" target="_blank">Google Image Search (May 2025)</a><br>
+    - <a href="screenshot-link" target="_blank">Comparison from Dec 2023</a>
+  </p>
+
+  <h2>💡 Why This Matters</h2>
+  <ul>
+    <li><strong>Yarn clips power visual search for media, education, and social storytelling</strong></li>
+    <li><strong>Google was the best way</strong> to preview and explore these video snippets</li>
+    <li>Now: Search is non-functional → results are <strong>invisible, mismatched, or unusable</strong></li>
+  </ul>
+
+  <h2>🔁 How to Reproduce the Bug</h2>
+  <ol>
+    <li>Go to <a href="https://images.google.com" target="_blank">Google Images</a></li>
+    <li>Search: <code>site:getyarn.io [phrase]</code> (e.g., <code>site:getyarn.io like that</code>)</li>
+    <li>Compare to screenshots or 2023 archive data</li>
+    <li>You’ll see: broken thumbnails, missing matches, filter drop-offs</li>
+  </ol>
+
+  <h2>🔍 Documentation & Bug Tracking</h2>
+  <ul>
+    <li>📊 <a href="your-google-sheet-link" target="_blank">Bug Timeline & Outreach Log (Google Sheet)</a></li>
+    <li>🧪 <a href="your-test-page-link" target="_blank">Test Page with Embedded Clips</a></li>
+    <li>🖼️ <a href="your-drive-folder-link" target="_blank">Full Screenshot Archive</a></li>
+  </ul>
+
+  <h2>🛠️ What Needs Fixing</h2>
+  <ul>
+    <li><strong>Restore correct image preview rendering</strong> for GetYarn.io</li>
+    <li><strong>Fix Google’s image categorization and filter logic</strong></li>
+    <li><strong>Roll back or review changes since ~Dec 2023</strong> when it worked properly</li>
+  </ul>
+  <p>
+    We are requesting <strong>reversion or debugging</strong> of indexing behavior that was previously <strong>functional in late 2023</strong> — when:
+  </p>
+  <ul>
+    <li>Thumbnails correctly matched clips</li>
+    <li>Filters like “Clip” and “Quote” worked</li>
+    <li>GetYarn.io content was <strong>searchable and previewable</strong></li>
+  </ul>
+
+  <h2>🙏 Final Request to Google Search Team</h2>
+  <p>
+    All I’m asking is for visibility, debugging, or escalation. This is a long-standing issue affecting a platform used globally in <strong>media, education, and social communication</strong>.
+  </p>
+  <blockquote>
+    <strong>If you're a Googler, Search Liaison, or SEO engineer</strong> — I’m happy to assist with logs, tracking, and more examples.
+  </blockquote>
+
+  <h2>📣 Community Call to Action</h2>
+  <p>If you care about <strong>open media search, UX, and transparency</strong>, please:</p>
+  <ul>
+    <li>💬 Share this post</li>
+    <li>🧵 Tag <a href="https://twitter.com/searchliaison" target="_blank">@searchliaison</a> on Twitter/X</li>
+    <li>🔁 Help circulate on SEO forums and tech communities</li>
+  </ul>
+  <p><strong>Suggested Hashtags:</strong><br>
+    #GetYarn #GoogleBug #ImageSearch #SEO #UXMatters #FixSearch
+  </p>
+
+  <hr>
+  <p style="font-size: 0.9em; color: #666;">© 2025 GetYarn.io Issue Tracker | Screenshots, logs & test data available on request.</p>
+
+</body>
+</html>
